@@ -1,8 +1,15 @@
-# Python Starter Overview
+# Bluemix Web Application
 
-The Python Starter demonstrates a simple, reusable Python web application.
+This is a web application that allows a user to upload, download, list and delete files stored into the NOSQL DB, also the file content stored are hashed in order to ensure security of the files uploaded in cloud.
 
-## Run the app locally
+# Technologies used are:
+1. Cloudant NoSQL DB
+2. Hashlib 
+3. Flask
+4. IBM Bluemix
+
+
+## Setup
 
 1. [Install Python][]
 2. Download and extract the starter code from the Bluemix UI
