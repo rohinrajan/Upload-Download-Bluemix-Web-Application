@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Cloud Assignment2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel= "stylesheet">
+</head>
+<body>
+	<div class="container">
+			<div class="header">
+				<h3 class="text-muted">Uploading a file</h3>
+			</div>
+			<hr/>
+			<div>
+			  <form action="" method="POST" enctype="multipart/form-data">
+				<input type="file" name="file">
+				<input type="submit" value="Upload">
+			  </form>
+			</div>
+	</div>
+	{% if istable %}
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<table class="table">
+				<tr> 
+					<th> Download File </th>
+					<th> Delete File </th>
+				</tr>
+				<tr>
+					<td>
+						<div class="input-group">
+							<form role="form" action="/download" method="POST" enctype="multipart/form-data">
+								<div class="form-group">
+									<input type="text" name="dfilename" placeholder="Filename">
+									<input type="text" name="dversion" placeholder="Version Number">
+									<input type="submit" value="Download">
+								</div>
+							</form>
+						</div>
+						</td>
+					<td>
+						<div class="input-group">
+							<form role="form" action="/deleted" method="POST" enctype="multipart/form-data">
+								<div class="form-group">
+									<input type="text" name="del_filename" placeholder="Filename">
+									<input type="text" name="del_version" placeholder="Version Number">
+									<input type="submit" value="Delete">
+								</div>
+							</form>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- Default panel contents -->
+		<div class="panel-heading">The list of files available in the server</div>
+		<!-- Table -->
+		<table class="table">
+			<tr>
+				<th> Revision No.</th>
+				<th> Filename </th>
+				<th> Content </th>
+				<th> HashValue </th>
+				<th> Last Modified Date</th>
+			</tr>
+			{% for doc in document %}
+			<tr>
+				<td> {{doc.revision}} </td>
+				<td> {{doc.filename}} </td>
+				<td> {{doc.content}}  </td>
+				<td> {{doc.hashvalue}}</td>
+				<td> {{doc.last_modified_date}} </td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	{% endif %}
+</body>
+</html>

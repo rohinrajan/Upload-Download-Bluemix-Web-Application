@@ -1,0 +1,5 @@
+Flask 
+python-keystoneclient==1.7.1
+python-swiftclient==2.6.0
+
+couchdb

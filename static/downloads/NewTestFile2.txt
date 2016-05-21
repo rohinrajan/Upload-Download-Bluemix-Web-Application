@@ -1,0 +1,7 @@
+This is a test file which can store information into it.
+I hope this would be stored in the NoSQL for Cloud Assignment2
+now with new value
+Please work
+come on work
+sample text
+cloud assignment2
